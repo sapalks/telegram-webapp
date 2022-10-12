@@ -1,0 +1,28 @@
+@import '../../../style/light.less';
+
+.basket-offer-footer {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    height: 40px;
+    align-items: flex-end;
+
+    .btn {
+        width: auto;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    &__delivery {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        color: @Primary;
+    }
+}
+
+.basket-offer__wrapper_not-available {
+    .basket-offer-footer {
+        justify-content: flex-end;
+    }
+}

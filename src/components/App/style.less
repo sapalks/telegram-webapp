@@ -1,0 +1,100 @@
+@import '../../style/light.less';
+@import '../../style/common.less';
+
+body,
+div,
+p,
+button,
+small,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', 'arial', sans-serif;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.btns {
+    background: #FFF;
+    display: flex;
+    padding: 20px 12px 12px 12px;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+
+    +.btns {
+        padding: 0px 12px 12px 12px;
+    }
+}
+
+.btn {
+    display: flex;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    height: 57px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    padding: 0 13px;
+    color: #000;
+    background: #EEEEEE;
+    text-transform: none;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+
+    +.btn {
+        margin-left: 12px;
+    }
+
+
+    &_primary {
+        background: @Primary;
+        color: #FFF;
+    }
+
+    &_disable {
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    &__row {
+        display: flex;
+        padding: 20px 12px 12px 12px;
+        flex-direction: row;
+        align-items: stretch;
+        width: 100%;
+
+        +.btn__row {
+            padding: 0px 12px 12px 12px;
+        }
+    }
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+small {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #767676;
+}

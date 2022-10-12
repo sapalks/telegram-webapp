@@ -1,0 +1,54 @@
+@import '../../../style/light.less';
+
+.basket-footer {
+    margin: 0 28px;
+    padding-bottom: 170px;
+
+    &__row,
+    &__btns {
+        margin: 12px 0;
+        display: flex;
+    }
+
+    &__row {
+        justify-content: space-between;
+
+        &_info {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #767676;
+        }
+
+        &_value {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            color: #000;
+        }
+    }
+
+    &__btns {
+        justify-content: center;
+
+        .btn {
+            height: 40px;
+            max-width: 280px;
+            font-size: 16px;
+            color: #767676;
+
+            svg {
+                margin-right: 12px;
+            }
+        }
+    }
+
+    &__remove {
+        color: @Danger;
+        display: flex;
+
+        svg {
+            margin-right: 12px;
+        }
+    }
+}

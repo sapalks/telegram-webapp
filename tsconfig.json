@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "sourceMap": true,
+    "target": "esnext",
+    "baseUrl": "src",
+    "paths": {
+      "api": ["api/*"],
+      "assets": ["assets/*"],
+      "components": ["components/*"],
+      "store": ["store/*"],
+      "utils": ["utils/*"]
+    }
+  },
+  "include": ["src/**/*", "src/custom.d.ts"],
+  "exclude": ["node_modules", "src/**/*.spec.ts"]
+}

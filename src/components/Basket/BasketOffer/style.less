@@ -1,0 +1,114 @@
+@import '../../../style/light.less';
+
+.basket-offer {
+    &__wrapper {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+
+        +.basket-offer__wrapper {
+            margin-top: 30px;
+        }
+
+        &_not-available {
+            .basket-offer {
+                &__title {
+                    user-select: none;
+                    opacity: .5;
+
+                    &-content {
+                        color: @Danger;
+                        font-weight: 500;
+                    }
+                }
+
+                &__bottom {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+
+    &__top {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+    }
+
+    &__bottom {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        height: 40px;
+        align-items: flex-end;
+
+        .btn {
+            width: auto;
+            height: 40px;
+            font-size: 14px;
+        }
+
+        &_delivery {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 23px;
+            color: @Primary;
+        }
+    }
+
+    &__no-count {
+        font-size: 16px;
+        line-height: 19px;
+        color: @Danger;
+        font-weight: 500;
+    }
+
+    &__title {
+        width: ~"calc(100% - 110px)";
+        align-items: flex-start;
+        display: flex;
+
+        &-content {
+            margin-left: 6px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            text-transform: uppercase;
+            color: #767676;
+            max-width: ~"calc(100% - 52px)";
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__count {
+        width: 92px;
+        max-width: 92px;
+        height: 40px;
+        display: flex;
+        flex: 1;
+        border: 1px solid #EEEEEE;
+        border-radius: 4px;
+
+        svg {
+            margin-top: -1px;
+        }
+    }
+
+    &__count-value {
+        width: 46px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        padding: 0 4px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__info {
+        margin-left: 6px;
+    }
+}
