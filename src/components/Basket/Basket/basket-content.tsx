@@ -44,7 +44,7 @@ export function BasketContent() {
     dispatch(changeDisplayedPriceMode());
   };
 
-  const partBoxs = parts.map((part) => {
+  const partBoxs = parts.map((part) => { // обычно такой код выносят в отдельный компонент и следят, чтобы он не выполнялся, когда список не меняется, чтобы избежать лишний ререндр
     const offers = part.offers.map((o) => <BasketOffer offer={o} key={o.id} />);
     return (
       <div key={part.id} className={cn('part')}>

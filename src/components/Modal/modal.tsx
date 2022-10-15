@@ -27,12 +27,18 @@ function Modal(props: ModalProps) {
   const height = useSelector(getViewportHeight);
 
   useEffect(() => {
-    document.body.classList.add(cn('no-scroll'));
+    // этот код наверное больше не нужен
+    // document.body.classList.add(cn('no-scroll'));
+    // return () => {
+    //   const haveOpenModal = !!document.getElementsByClassName(cn('overlay')).length;
+    //   if (!haveOpenModal) {
+    //     document.body.classList.remove(cn('no-scroll'));
+    //   }
+    // };
+    document.documentElement.style.overflow = 'hidden'
+
     return () => {
-      const haveOpenModal = !!document.getElementsByClassName(cn('overlay')).length;
-      if (!haveOpenModal) {
-        document.body.classList.remove(cn('no-scroll'));
-      }
+      document.documentElement.style.overflow = 'unset'
     };
   }, []);
 

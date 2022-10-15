@@ -37,6 +37,7 @@ export function BasketFooter({
   }, [selectedPartIds]);
 
   return (
+    // ненужный пустой тег
     <>
       <div className={cn()}>
         <div className={cn('row')}>
