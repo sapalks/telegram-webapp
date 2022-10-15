@@ -40,22 +40,33 @@ export function stripHtml<T extends string | undefined | null>(html: T): T {
   return html?.replace(/(<([^>]+)>)/gi, '').replace(/[<>]/gi, '') as T;
 }
 
+// эту функцию можно заменить на что-то проще, например:
+// export const capitalize = (input?: string) => {
+//   const words = input?.split(" ");
+
+//   const result = words?.map((word) => { 
+//     return word[0].toUpperCase() + word.substring(1); 
+//   }).join(" ");
+
+//   return result;
+// }
+
 export function capitalize(
-  input: string | undefined | null,
+  input: string | undefined | null, // можно писать просто input?: string
   willUpFirstSymbOfAllWords: boolean,
-): string | undefined | null {
+): string | undefined | null { // возвращать из функции так много разных типов данных не очень
   if (!input) {
     return input;
   }
   const res: string[] = [];
-  const symbs = /[a-zа-я]/gi;
+  const symbs = /[a-zа-я]/gi; // когда будете использовать другие языки, функция не будет работать
   let willUpNext = true;
   for (const s of input) {
     symbs.lastIndex = 0;
     if (willUpFirstSymbOfAllWords && !symbs.test(s)) {
       willUpNext = true;
       res.push(s.toLowerCase());
-      continue;
+      continue; // использовать continue в js считается плохой практикой
     }
     if (willUpNext) {
       willUpNext = false;
@@ -67,7 +78,7 @@ export function capitalize(
   return res.join('');
 }
 
-const fakeVinPrefix = 'TADAM';
+const fakeVinPrefix = 'TADAM'; // используеся только в теле фунции isFakeVin, можно перенести туда
 
 function isFakeVin(vin: string): boolean {
   return vin?.startsWith(fakeVinPrefix);

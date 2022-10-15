@@ -1,1 +1,1 @@
-export { Basket } from './basket';
+export { Basket } from './basket'; // в последнее время редко вижу, когда импорты пишут именно так, но это уже вкусовщина
