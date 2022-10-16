@@ -10,6 +10,7 @@ export type RadioBtnProps = {
   onClick?: (value: boolean) => void;
 };
 
+// Странное название
 export function Rb({ value, onClick }: RadioBtnProps) {
   return (
     <span

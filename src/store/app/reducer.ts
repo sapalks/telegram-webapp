@@ -1,4 +1,6 @@
-import { createReducer, PayloadAction } from '@reduxjs/toolkit';
+// В тулките есть creteSlice данный способ создания стора
+// позволяет избежать большого количетсва кода связанного с экшинами и редьюсерами
+import { PayloadAction, createReducer } from '@reduxjs/toolkit';
 
 import { AppInitialState } from 'store/app/types';
 import {

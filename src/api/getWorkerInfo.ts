@@ -1,3 +1,4 @@
+// Аналогично с getOrders
 export const getWorkerInfo = async (): Promise<boolean> => {
   const promise = new Promise((res) => {
     setTimeout(() => res({

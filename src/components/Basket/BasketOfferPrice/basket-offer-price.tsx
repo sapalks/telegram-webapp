@@ -19,6 +19,7 @@ export function BasketOfferPrice({ price, count, activeColor = '#3F8CE4' }: Bask
   const priveStr = toLocaleFixed(price);
   const calc = (
     <>
+      {/* Магическое значение для цвета */}
       {priveStr} <Currency size="12px" color="#767676" /> х {count} шт =&nbsp;
     </>
   );

@@ -42,7 +42,7 @@ export function BasketContent() {
 
   const changePriceMode = () => {
     dispatch(changeDisplayedPriceMode());
-  };
+  }; // Можно положить в useCallback
 
   const partBoxs = parts.map((part) => {
     const offers = part.offers.map((o) => <BasketOffer offer={o} key={o.id} />);
@@ -50,7 +50,7 @@ export function BasketContent() {
       <div key={part.id} className={cn('part')}>
         <h2>{part.name}</h2>
         {offers}
-      </div>
+      </div> // Я бы вынес отдельный компонент
     );
   });
 

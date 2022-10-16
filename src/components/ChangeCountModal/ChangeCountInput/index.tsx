@@ -1,3 +1,5 @@
+// Нарушен нейминг который применяется на проекте, обычно индексный файл лишь реекспортит,
+// тут в нем компонент
 import React, {
   ChangeEvent, useCallback, useRef, useState,
 } from 'react';
@@ -11,7 +13,7 @@ type ChangeCountInputProps = {
   onSubmit: (value: number) => void;
 };
 export function ChangeCountInput(props: ChangeCountInputProps) {
-  const { countInShop, multiplicity, onSubmit } = props;
+  const { countInShop, multiplicity, onSubmit } = props; // Лучше деструктурировать в строке выше, поддерживая общий стиль проекта
   const [more, setMore] = useState('');
 
   const invalidMoreValue = Number(more) > countInShop || Number(more) % multiplicity !== 0;

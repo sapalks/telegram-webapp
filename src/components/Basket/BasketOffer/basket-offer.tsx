@@ -61,7 +61,7 @@ export function BasketOffer({ offer }: BasketOfferProps) {
             onClick={(e) => {
               e.stopPropagation();
               openChangeCountModal();
-            }}
+            }} // Удонее когда такие калбэки вынесены из jsx + функцию можно оптимизировать, в разметке такое сделать не получится
           >
             <div className={cn('count-value')}>{offer.quantity}</div>
             <Arrows />

@@ -22,6 +22,7 @@ export function BasketOfferFooter(props: BasketOfferFooterProps) {
   const priceField: keyof PartInLocalCart = isOriginPrice ? 'price' : 'priceOffered';
 
   return (
+    // Убрать неиспользуемый код, так как cn это функция и тут она вызывается, но пользы нет
     <div className={cn()}>
       {offer.isAvailable ? (
         <>
@@ -30,7 +31,7 @@ export function BasketOfferFooter(props: BasketOfferFooterProps) {
             <BasketOfferPrice
               price={offer[priceField]}
               count={offer.quantity}
-              activeColor={isOriginPrice ? '#31B545' : '#3F8CE4'}
+              activeColor={isOriginPrice ? '#31B545' : '#3F8CE4'} // магические значения, лучше вынести в переменные
             />
           </div>
         </>
