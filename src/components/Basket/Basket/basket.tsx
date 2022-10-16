@@ -36,7 +36,7 @@ export type BasketProps = {
 };
 
 export function Basket({ orderId }: BasketProps) {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>(); // Обычно если проект использует redux/toolkit дефолтные хуки useDispatch и useSelector типизируются отдельно (https://redux-toolkit.js.org/tutorials/typescript#define-typed-hooks), что бы постоянно не прокидывать типы
   const parts = useSelector(getParts);
   const car = useSelector(getCar);
   const isShowApprove = useSelector(showApprove);
@@ -52,11 +52,11 @@ export function Basket({ orderId }: BasketProps) {
   const partForTitleModal = useSelector(getPartForTitle);
 
   const haveOpenModal = Boolean(
-    offerForChangeCount || removedOffers.length || offerDetail || partForTitleModal,
+    offerForChangeCount || removedOffers.length || offerDetail || partForTitleModal
   );
 
-  const haveParts = parts.length > 0;
-  const selectedParts = parts.map((part) => part.offers.filter((o) => o.selected)).flat();
+  const haveParts = parts.length > 0; // Такое лучше положить в useState и в useEffect пересчитывать если parts.length будет менять, сейчас оно считается при каждом ререндере, либо если предполагаем что меняться не будет в useRef, либо считать в useMemo
+  const selectedParts = parts.map((part) => part.offers.filter((o) => o.selected)).flat(); // Тут я бы положил в useMemo
 
   return (
     <>
@@ -68,11 +68,12 @@ export function Basket({ orderId }: BasketProps) {
         <div className={cn()}>
           <h1>
             {!isShowApprove && (
-            <>Корзина&nbsp;
-              <small>
-                {selectedParts.length} {positionEnding(selectedParts.length)}
-              </small>
-            </>
+              <>
+                Корзина&nbsp;
+                <small>
+                  {selectedParts.length} {positionEnding(selectedParts.length)}
+                </small>
+              </>
             )}
             {isShowApprove && 'Оформление заказа'}
             <br />

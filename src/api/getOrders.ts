@@ -202,6 +202,10 @@ const requests = [
     id: '8f302574-46c5-4fd6-bf21-349fb9ff6292', parentId: '95a2215b-84fb-4960-8695-95f5911bcb8e', createdAt: 1661521166169, createdBy: '17581004-599c-4c45-a071-3acc9d10e0e6', firstStartedAt: 1661521166450, readyAt: 1661521181660, doneAt: null, pricedAt: null, setAsDifficultAt: null, text: 'Салонный фильтр', type: 'parts', sourceType: 'parts', state: 'wait', selectedParts: [], comment: null, hasUnresolvedChat: false, hasUnresolvedApproving: true,
   }];
 
+// Моковое апи я бы предложил сделать через серви по типу json-placeholder,
+// он позволит не писать подобные функции,
+// а работать с запросами как с настоящими, использую схемы ответов как в бою.
+// Также такой сервис позволит настроить обработку ошибок.
 export const getOrder = async (_id: string): Promise<OrderInfo> => {
   const promise = new Promise((res) => {
     setTimeout(() => res({

@@ -10,6 +10,7 @@ export type CheckBoxPops = {
   onClick?: (e: React.MouseEvent, value: boolean) => void;
 };
 
+// Старнное название для компанента, так экспорт именовынный могут быть сложности при чтении
 export function Cb({ value, onClick }: CheckBoxPops) {
   return (
     <span

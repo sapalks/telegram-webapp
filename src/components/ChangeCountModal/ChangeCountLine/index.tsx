@@ -30,7 +30,7 @@ export function ChangeCountLine(props: LineProps) {
       className={cn('line', { disable, 'is-active': isActive })}
       onClick={() => {
         onClick(value);
-      }}
+      }} // можно каррировать функцию onClick тогда тут не потребуется калбэк
     >
       <Rb value={isActive} />
       {items}
